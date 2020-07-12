@@ -22,7 +22,6 @@ numeral.register('locale','fr',{
 
 });
 
-
 const ExpenseListItem = ({ id, description, amount, createdAt }) => (
  <div>
     <Link to={`/edit/${id}`}>

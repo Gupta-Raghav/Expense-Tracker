@@ -9,7 +9,7 @@
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest",
+    "test": "cross-env KEY_ENV=test jest",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   },
@@ -20,6 +20,7 @@
     "css-loader": "3.5.3",
     "express": "4.17.1",
     "extract-text-webpack-plugin": "3.0.2",
+    "firebase": "7.15.5",
     "jest": "^26.0.1",
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "0.9.0",
@@ -35,6 +36,7 @@
     "react-redux": "7.2.0",
     "react-router-dom": "5.1.2",
     "redux": "4.0.5",
+    "redux-thunk": "2.3.0",
     "sass-loader": "7.0.2",
     "style-loader": "1.2.1",
     "uuid": "3.1.0",
@@ -46,6 +48,8 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "babel-cli": "^6.26.0",
+    "cross-env": "7.0.2",
+    "dotenv": "8.2.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "3.10.3"
   }
