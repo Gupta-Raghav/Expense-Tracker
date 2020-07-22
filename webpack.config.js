@@ -50,11 +50,11 @@ const CSSExtract = new MiniCssExtractPlugin('styles.css');
         plugins :[
             CSSExtract,
             new webpack.DefinePlugin({
-                'process.env.FIREBASE_API_KEY' : JSON.stringify(process.env.FIREBASE_API_KEY),
-                'process.env.FIREBASE_AUTH_DOMAIN' : JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN ),
+                'process.env.FIREBASE_API_KEY' : "'AIzaSyC14zrFAXT6Ae_oJRZD4iA6zSn_mQHGJJE'",
+                'process.env.FIREBASE_AUTH_DOMAIN' : "'expensify-8fb86.firebaseapp.com'",
                 'process.env.FIREBASE_DATABSE_URL' : "'https://expensify-8fb86.firebaseio.com'",
                 'process.env.FIREBASE_PROJECT_ID' : JSON.stringify(process.env.FIREBASE_PROJECT_ID),
-                'process.env.FIREBASE_STORAGE_BUCKET' : JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
+                'process.env.FIREBASE_STORAGE_BUCKET' : "'expensify-8fb86.appspot.com'",
                 'process.env.FIREBASE_APP_ID' : JSON.stringify(process.env.FIREBASE_APP_ID),
                 'process.env.FIREBASE_MEASUREMENT_ID' : JSON.stringify(process.env.FIREBASE_MEASUREMENT_ID),
                 'process.env.FIREBASE_MESSAGING_SENDER_ID' : JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID),
