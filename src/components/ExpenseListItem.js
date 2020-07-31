@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import numeral from 'numeral';
 
-numeral.register('locale','fr',{
+numeral.register('locale','inr',{
   delimiters:{
+    lakhs: ' ',
     thousands: ' ',
     decimal:','
   },
@@ -21,14 +22,16 @@ numeral.register('locale','fr',{
   }
 
 });
-
+const numberWithCommas = (x) => {
+  return x.toString().split('.')[0].length > 3 ? x.toString().substring(0,x.toString().split('.')[0].length-3).replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + x.toString().substring(x.toString().split('.')[0].length-3): x.toString();
+}
 const ExpenseListItem = ({ id, description, amount, createdAt }) => (
     <Link className="list-item" to={`/edit/${id}`}>
       <div>
       <h3 className="list-item__title">{description}</h3>
       <span className="list-item__sub-title">{moment(createdAt).format('MMMM Do, YYYY')}</span>
       </div>
-      <h3 className="list-item__data">{numeral(amount).format('$0,00.00')}</h3>
+<h3 className="list-item__data">{'₹'}{numberWithCommas(amount)}</h3>
     </Link>
 );
 
