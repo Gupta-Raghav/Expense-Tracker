@@ -1,27 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import numeral from 'numeral';
 
-numeral.register('locale','inr',{
-  delimiters:{
-    lakhs: ' ',
-    thousands: ' ',
-    decimal:','
-  },
-  abbreviations:{
-    thousand:'k',
-    lakh: 'L',
-    crore: 'Cr'
-  },
-  ordinal: function(number){
-    return number === 1 ? 'er' : 'ème';
-  },
-  currency:{
-    symbol:'₹'
-  }
 
-});
 const numberWithCommas = (x) => {
   return x.toString().split('.')[0].length > 3 ? x.toString().substring(0,x.toString().split('.')[0].length-3).replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + x.toString().substring(x.toString().split('.')[0].length-3): x.toString();
 }
