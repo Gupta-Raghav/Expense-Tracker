@@ -9,6 +9,7 @@ const ExpenseList = (props) => (
       <div className="show-for-mobile">Expenses</div>
       <div className="show-for-desktop">Expense</div>
       <div className="show-for-desktop">Amount</div>
+      <div className="show-for-desktop">Edit/remove</div>
     </div>
     <div className="list-body">
     {
@@ -19,6 +20,8 @@ const ExpenseList = (props) => (
       ) : (
           props.expenses.map((expense) => {
       return <ExpenseListItem key={expense.id} {...expense} />;
+     
+
     })
   )
 }
