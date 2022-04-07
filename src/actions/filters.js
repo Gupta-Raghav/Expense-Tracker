@@ -25,3 +25,11 @@ export const setEndDate = (endDate) => ({
   type: 'SET_END_DATE',
   endDate
 });
+
+export const setViewListView = () => ({
+  type: 'SET_VIEW_LISTVIEW',
+});
+
+export const setViewAnalytics = () => ({
+  type: 'SET_VIEW_ANALYTICS',
+});

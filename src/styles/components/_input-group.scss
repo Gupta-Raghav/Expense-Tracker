@@ -1,7 +1,10 @@
 .input-group{
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     margin-bottom: $m-size;
+    margin-left: $m-size;
+    margin-right: $m-size;
     @media(min-width:$desktop-breakpoint){
         flex-direction: row;
         margin-bottom: $l-size;
@@ -9,9 +12,34 @@
 }
 .input-group__item{
     margin-bottom: $s-size;
+    width: 20%;
+    padding-right:20px ;
    
     @media(min-width:$desktop-breakpoint){
         margin:0 $s-size 0 0;
 
     }
+ 
+}
+.input-group__Search{
+    width: 30%;
+    padding: 0;
+    margin-bottom:0 $s-size 0 0;
+    
+   
+    @media(min-width:$desktop-breakpoint){
+        margin:0 $s-size 0 0;
+
+}
+}
+.input-group__Calendar{
+    width: 28.5%;
+    margin-bottom: $s-size;
+    padding: 0;
+    
+   
+    @media(min-width:$desktop-breakpoint){
+        margin:0 $s-size 0 0;
+
+}
 }

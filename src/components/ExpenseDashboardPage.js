@@ -1,16 +1,27 @@
 import React from 'react';
+import { connect, useSelector } from 'react-redux';
 import ExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
 import ExpensesSummary from './ExpensesSummary';
 import { Infoheadline } from './Infoheadline';
+import Piec from './Piec';
 
-const ExpenseDashboardPage = () => (
+export class ExpenseDashboardPage extends React.Component{
+  render(){
+  return(
   <div>
     <ExpensesSummary />
     <Infoheadline/>
     <ExpenseListFilters />
-    <ExpenseList />
+    {this.props.filters.viewBy !=='list-view'? <ExpenseList /> :<Piec/> }
   </div>
-);
+  )}
+};
 
-export default ExpenseDashboardPage;
+const mapStateToProps = (state) => {
+  return {
+    filters: state.filters
+  };
+};
+
+export default connect  (mapStateToProps)(ExpenseDashboardPage);

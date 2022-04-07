@@ -4,8 +4,9 @@ import moment from 'moment';
 const filtersReducerDefaultState = {
   text: '',
   sortBy: 'date',
-  startDate: moment().startOf('month'),
-  endDate: moment().endOf('month')
+  startDate: moment().startOf('year'),
+  endDate: moment().endOf('year'),
+  viewBy: 'list-view'
 };
 
 export default (state = filtersReducerDefaultState, action) => {
@@ -34,6 +35,16 @@ export default (state = filtersReducerDefaultState, action) => {
       return {
         ...state,
         endDate: action.endDate
+      };
+      case 'SET_VIEW_LISTVIEW':
+      return {
+        ...state,
+        viewBy : 'list-view'
+      };
+      case 'SET_VIEW_ANALYTICS':
+      return {
+        ...state,
+        viewBy : 'analytics'
       };
     default:
       return state;
