@@ -3,7 +3,7 @@ import { connect, useSelector } from 'react-redux';
 import ExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
 import ExpensesSummary from './ExpensesSummary';
-import { Infoheadline } from './Infoheadline';
+import Infoheadline  from './Infoheadline';
 import Piec from './Piec';
 
 export class ExpenseDashboardPage extends React.Component{
@@ -13,7 +13,7 @@ export class ExpenseDashboardPage extends React.Component{
     <ExpensesSummary />
     <Infoheadline/>
     <ExpenseListFilters />
-    {this.props.filters.viewBy !=='list-view'? <ExpenseList /> :<Piec/> }
+    {this.props.filters.viewBy ==='list-view'? <ExpenseList /> :<Piec/> }
   </div>
   )}
 };

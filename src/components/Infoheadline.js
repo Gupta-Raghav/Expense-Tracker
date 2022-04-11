@@ -1,24 +1,25 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import numeral from 'numeral';
-import selectExpenses from '../selectors/expenses';
-import selectExpensesTotal from '../selectors/expenses-total';
-import {Link} from 'react-router-dom';
-import inrformat from 'inrformat'
+import moment from 'moment';
 
-const numberWithCommas = (x) => {
-    return x.toString().split('.')[0].length > 3 ? x.toString().substring(0,x.toString().split('.')[0].length-3).replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + x.toString().substring(x.toString().split('.')[0].length-3): x.toString();
-  }
-
-export const Infoheadline =()=> {
+class Infoheadline extends React.Component {
+    render(){
     return(
         <div className="info-header ">
             <div className="content-container">
-    <h3 className="info-header__title">Currently you are seeing the expenses for <b>Feburary</b></h3>
-             </div>
+            <h3 className="info-header__title">Currently you are seeing the expenses from <b>{moment(this.props.filters.startDate).format('MMMM Do, YYYY')}</b> to <b>{moment(this.props.filters.endDate).format('MMMM Do, YYYY')}</b></h3>
+            </div>
         </div>
     );
 }
+}
+
+const mapStateToProps =(state)=> {
+
+    return{
+        filters: state.filters    
+    };
+};
 
 
-export default (Infoheadline);
+export default connect(mapStateToProps)(Infoheadline);
