@@ -3,6 +3,7 @@ import { PieChart } from 'react-minimal-pie-chart';
 import { connect } from 'react-redux';
 import selectExpenses from '../selectors/expenses';
 import randomColor from "randomcolor";
+import ReactApexChart from "./Chart";
 
 
 const Piec= (props)=>{
@@ -14,14 +15,21 @@ const Piec= (props)=>{
         chartlist.push(info)
     })
     return(
+    <div>
     <div className='analytics-container  analytics-container_left'>
-        <PieChart 
-        data={chartlist}
-            
-        animate = 'true'
-        reveal = '40%'
-        radius = '20'
-        /> 
+      <PieChart 
+      data={chartlist}
+          
+      animate = 'true'
+      reveal = '40%'
+      radius = '20'
+      /> 
+    </div>
+    <div>
+    {/* <div id="chart" className='analytics-container  analytics-container_right'>
+    <ReactApexChart options={this.props} series={this.props.expenses} type="line" height={350} />
+</div> */}
+    </div>
     </div>
 
     )}
