@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addDays } from 'date-fns';
 import { DateRangePicker } from 'react-dates';
-//import { DateRangePicker } from 'react-date-range';
+import { BsArrowRight } from "react-icons/bs";
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, setViewListView,setViewAnalytics } from '../actions/filters';
 
 class ExpenseListFilters extends React.Component {
@@ -21,6 +21,7 @@ class ExpenseListFilters extends React.Component {
       <div>
         <div className="input-group">
           <div className="input-group__Search">
+          <label>Search-By-Text</label>
           <input
           type="text"
           className="text-input"
@@ -32,8 +33,10 @@ class ExpenseListFilters extends React.Component {
         />
           </div>
           <div className="input-group__item">
+          <label>Sort-By</label>
            <select
            className = "select"
+           placeholder='Sort-By'
            value={this.props.filters.sortBy}
            onChange={(e) => {
              if (e.target.value === 'date') {
@@ -43,11 +46,12 @@ class ExpenseListFilters extends React.Component {
              }
            }}
          >
-          <option value="date">Date</option>
-          <option value="amount">Amount</option>
+          <option value="date">Date(Latest-First)</option>
+          <option value="amount">Amount(Descending)</option>
         </select>
           </div>
           <div className="input-group__item">
+          <label>View-By</label>
            <select
            className = "select"
            value={this.props.filters.viewBy}
@@ -64,6 +68,7 @@ class ExpenseListFilters extends React.Component {
         </select>
           </div>
           <div className="input-group__Calendar">
+          <label>Start-Data <BsArrowRight/> End-Date</label>
          <DateRangePicker style ={{width:'100%'}}
           startDatePlaceholder = "DD/MM/YYYY"
           startDate={this.props.filters.startDate}

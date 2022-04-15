@@ -14,6 +14,7 @@ const Piec= (props)=>{
         let info = {title:expense.description,value:expense.amount,color:color}
         chartlist.push(info)
     })
+    
     return(
     <div>
     <div className='analytics-container  analytics-container_left'>
@@ -24,6 +25,7 @@ const Piec= (props)=>{
       reveal = '40%'
       radius = '20'
       /> 
+      <p>Hover over the chart to check-out respective expenses</p>
     </div>
     <div>
     {/* <div id="chart" className='analytics-container  analytics-container_right'>
