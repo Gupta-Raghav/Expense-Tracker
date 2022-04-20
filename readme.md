@@ -30,6 +30,8 @@ In order to have this project up and running you will need:
 ## Setup
 
 You are supposed to run: npm run dev-server, to run the project in your local machine.
-Then head to the localhost on port 8080 https://localhost:8080Congrats the project is fully working.
+Then head to the localhost on port 8080 https://localhost:8080 
+
+Congrats the project is fully working.
 ![image](https://user-images.githubusercontent.com/42888633/164336877-61a02e0d-3747-45f7-9b5c-730cbe8fd8b5.png)
 screenshot![image](https://user-images.githubusercontent.com/42888633/164336835-a8333864-53b0-4b5f-84dd-559fd052e730.png)
