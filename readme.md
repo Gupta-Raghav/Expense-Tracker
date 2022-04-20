@@ -1,11 +1,13 @@
-#Expensify#
+# Expensify #
 
-    *Expensify is an Expenses tracker built to help users track there expenses through the days, and later calculate how much they have spend based on an internal of time.*
+    Expenses tracker is built to help users track there expenses through the days,
+    and later calculate how much they have spend based on an internal of time. You can also check your spendings in a chart format using
+    analytics view
 
 ![app_screenshot](https://user-images.githubusercontent.com/42888633/164337000-11198abb-aae1-4e90-a7af-25bc89ac8007.png)
 
 
-##Built With##
+## Built With 
 
         * ReactJS 17,
         * React DOM 17,
@@ -18,14 +20,14 @@
 
 npm i or npm install will install all the dependencies that are needed for the project.
 
-##Getting Started##
+## Getting Started 
 
-##Prerequisites##
+## Prerequisites 
 
 In order to have this project up and running you will need:
    * NodeJS 10+
 
-##Setup##
+## Setup
 
 You are supposed to run: npm run dev-server, to run the project in your local machine.
 Then head to the localhost on port 8080 https://localhost:8080Congrats the project is fully working.
